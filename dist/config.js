@@ -14,5 +14,5 @@ window.QUIZ_CONFIG = {
 
   // GHL Inbound Webhook for the "Authority Gap Quiz — Capture, Tag & Result Email"
   // workflow. Receives { email, profile, highestTotal, isTie, source }.
-  webhookUrl: "REPLACE_WITH_GHL_WEBHOOK_URL"
+  webhookUrl: "https://services.leadconnectorhq.com/hooks/5zEv2FFMjyeAsbyYv5KE/webhook-trigger/72e57d3e-73ec-470d-a399-6189010bda70"
 };
