@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Authority Gap Quiz | Tiesha Green</title>
+<meta name="description" content="Find out what's really keeping you overlooked. Six quick questions, three choices each.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="quiz-shell">
+
+  <div class="quiz-progress" id="quizProgress" aria-hidden="true">
+    <div class="quiz-progress-fill" id="quizProgressFill"></div>
+  </div>
+
+  <main id="quizMain" class="quiz-main">
+
+    <!-- WELCOME -->
+    <section class="screen" data-screen="welcome" id="screen-welcome">
+      <p class="eyebrow">The 2-Minute Authority Gap Quiz</p>
+      <h1>Find out what's really keeping you overlooked.</h1>
+      <p class="lead">You know you have something to offer. But when it's time to be seen, say what you think, or invite people to work with you, something gets in the way.</p>
+      <p class="lead">Are you holding back? Making your message safer? Trying to say everything? Downplaying what you bring?</p>
+      <p class="lead">Let's look at what you actually do, so you can recognize the pattern and take one step forward.</p>
+      <button class="btn btn-primary btn-lg" id="startBtn" type="button"><span>Find My Authority Gap</span></button>
+      <p class="fine-print">Six quick questions. Three choices each.</p>
+    </section>
+
+    <!-- QUESTION -->
+    <section class="screen" data-screen="question" id="screen-question" hidden>
+      <p class="q-count" id="qCount">Question 1 of 6</p>
+      <h2 id="qPrompt"></h2>
+      <p class="q-instruction">Choose what sounds most like you lately, even if none of the answers fits perfectly.</p>
+      <fieldset class="answer-fieldset" id="qFieldset">
+        <legend class="sr-only" id="qLegend">Answer choices</legend>
+        <div class="answer-list" id="qAnswers"></div>
+      </fieldset>
+      <div class="q-nav">
+        <button class="btn btn-ghost" id="qBack" type="button">Back</button>
+        <button class="btn btn-primary" id="qNext" type="button" disabled><span>Next</span></button>
+      </div>
+    </section>
+
+    <!-- TIE -->
+    <section class="screen" data-screen="tie" id="screen-tie" hidden>
+      <h2>More than one pattern showed up.</h2>
+      <p class="lead">Which feels most familiar right now? Your answers gave these patterns equal weight. Choose where you'd like to start.</p>
+      <div class="tie-options" id="tieOptions"></div>
+      <button class="btn btn-ghost" id="tieBack" type="button">Back</button>
+    </section>
+
+    <!-- EMAIL GATE -->
+    <section class="screen" data-screen="gate" id="screen-gate" hidden>
+      <p class="eyebrow">Your result is ready</p>
+      <h2>Enter your email to see it.</h2>
+      <p class="lead">I'll show you your result right here, and send the full breakdown with your first move to your inbox too.</p>
+      <form class="gate-form" id="gateForm" novalidate>
+        <input class="gate-field" type="email" id="gateEmail" name="email" placeholder="Email address" autocomplete="email" required>
+        <p class="gate-error" id="gateError" role="alert">Something went wrong sending that. Check your connection and try again.</p>
+        <button class="btn btn-primary btn-lg" id="gateSubmit" type="submit"><span>Show My Result</span></button>
+      </form>
+      <p class="fine-print">I'll only use this to send your result. See the <a id="privacyLink" href="#">privacy policy</a>.</p>
+    </section>
+
+    <!-- RESULT -->
+    <section class="screen" data-screen="result" id="screen-result" hidden>
+      <p class="result-pill" id="resultPill"></p>
+      <h2 id="resultTitle"></h2>
+      <p class="lead" id="resultBody"></p>
+
+      <div class="result-block" id="resultUnderneathBlock">
+        <h3>What may be happening underneath</h3>
+        <p id="resultUnderneath"></p>
+      </div>
+
+      <div class="result-block">
+        <h3>Your first move</h3>
+        <p id="resultFirstMove"></p>
+      </div>
+
+      <div class="result-block" id="resultNoticeBlock">
+        <h3>Notice what comes up</h3>
+        <p id="resultNotice"></p>
+      </div>
+
+      <p class="result-note" id="resultNote"></p>
+
+      <div class="invite-block">
+        <h3>Now let's do something with this</h3>
+        <p class="lead" id="resultBridge"></p>
+        <p class="lead">Recognizing the pattern is the start. In the Next-Level Authority Challenge, we work on owning what you bring, expressing it clearly, and taking the actions you've been holding back.</p>
+        <a class="btn btn-primary btn-lg" id="challengeBtn" href="#"><span>Explore the Next-Level Authority Challenge</span></a>
+      </div>
+
+      <div class="result-footer">
+        <button class="link-btn" id="reviewToggle" type="button">Review my answers</button>
+        <button class="link-btn" id="startOverBtn" type="button">Start again</button>
+      </div>
+
+      <div class="review-panel" id="reviewPanel" hidden></div>
+    </section>
+
+  </main>
+
+  <footer class="quiz-footer">
+    <p>&copy; <span id="year"></span> Tiesha Green</p>
+  </footer>
+
+</div>
+
+<script src="dist/config.js"></script>
+<script src="dist/assessment.js"></script>
+<script src="dist/app.js"></script>
+</body>
+</html>
